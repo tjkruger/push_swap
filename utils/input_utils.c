@@ -6,7 +6,7 @@
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 17:43:21 by tjkruger          #+#    #+#             */
-/*   Updated: 2025/01/21 16:11:57 by tjkruger         ###   ########.fr       */
+/*   Updated: 2025/01/22 15:49:17 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,56 +18,30 @@
 int	ft_atoi(const char *s)
 {
 	int		i;
-	int		sign;
 	long	result;
+	int		sign;
 
+	i = 0;
 	i = 0;
 	sign = 1;
 	result = 0;
 	while (s[i] == ' ' || s[i] == '\t' || s[i] == '\n' || s[i] == '\v'
 		|| s[i] == '\f' || s[i] == '\r')
 		i++;
-	if (s[i] == '-' || s[i] == '+')
-	{
-		if (s[i] == '-')
+	if (s[i] == '+' || s[i] == '-')
+		if (s[i++] == '-')
 			sign = -1;
-		i++;
-	}
-	while (s[i] >= '0' && s[i] <= '9')
-	{
-		result = result * 10 + (s[i] - '0');
-		i++;
-	}
-	result = result * sign;
-	if (result > 2147483647 || result < -2147483648)
+	if (!s[i])
 		return (0);
-	return ((int)result);
-}
-
-int	is_int(int value)
-{
-	if (value > 2147483647 || value < -2147483648)
-		return (0);
-	return (1);
-}
-
-int	is_valid_input(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] == ' ' || s[i] == '\t' || s[i] == '\n' || s[i] == '\v'
-		|| s[i] == '\f' || s[i] == '\r')
-		i++;
-	if (s[i] == '-' || s[i] == '+')
-		i++;
-	while (s[i] != '\0')
+	while (s[i])
 	{
 		if (s[i] < '0' || s[i] > '9')
 			return (0);
-		i++;
+		result = result * 10 + (s[i++] - '0');
+		if ((result * sign) > 2147483647 || (result * sign) < -2147483648)
+			return (0);
 	}
-	return (1);
+	return ((int)(result * sign));
 }
 
 t_dnode	*parse_input(int argc, char **argv)
@@ -80,12 +54,6 @@ t_dnode	*parse_input(int argc, char **argv)
 	i = 1;
 	while (i < argc)
 	{
-		if (!is_valid_input(argv[i]))
-		{
-			ft_printf("Error: Invalid input '%s'\n", argv[i]);
-			free_list(&list);
-			return (NULL);
-		}
 		value = ft_atoi(argv[i]);
 		if (value == 0 && argv[i][0] != '0')
 		{

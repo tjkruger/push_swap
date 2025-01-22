@@ -22,6 +22,8 @@ SRCS =	$(PRINTF_DIR)/ft_printf.c \
 		$(PRINTF_DIR)/ft_putptr.c \
 		$(PRINTF_DIR)/ft_putstr.c \
 		$(PRINTF_DIR)/ft_putunsigned.c \
+		$(UTILS_DIR)/list_utils.c \
+		$(UTILS_DIR)/input_utils.c \
 		$(SRCS_DIR)/main.c \
 
 
@@ -36,6 +38,9 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+
+$(OBJDIR)/%.o: $(PRINTF_DIR)/%.c | $(OBJDIR)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJDIR)/%.o: $(SRCS_DIR)/%.c | $(OBJDIR)
 	$(CC) $(CFLAGS) -c $< -o $@

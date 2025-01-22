@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.c                                      :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 15:20:29 by tjkruger          #+#    #+#             */
-/*   Updated: 2024/11/11 14:06:51 by tjkruger         ###   ########.fr       */
+/*   Updated: 2025/01/21 14:36:22 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 int	handle_conversion(char specifier, va_list args, int *chars_pr)
 {
@@ -38,7 +38,6 @@ int	handle_conversion(char specifier, va_list args, int *chars_pr)
 		return (ft_putchar(va_arg(args, int), chars_pr));
 	return (0);
 }
-// #include <stdio.h>
 
 int	ft_printf(const char *format, ...)
 {

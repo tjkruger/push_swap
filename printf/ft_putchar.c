@@ -6,11 +6,11 @@
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 12:50:21 by tjkruger          #+#    #+#             */
-/*   Updated: 2024/11/08 12:22:52 by tjkruger         ###   ########.fr       */
+/*   Updated: 2025/01/21 14:37:36 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 int	ft_putchar(char c, int *chars_pr)
 {

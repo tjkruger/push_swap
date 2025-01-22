@@ -6,11 +6,11 @@
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 05:36:31 by tjkruger          #+#    #+#             */
-/*   Updated: 2024/11/11 13:22:43 by tjkruger         ###   ########.fr       */
+/*   Updated: 2025/01/21 14:37:40 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 int	ft_puthex(unsigned long format, int uppercase, int *chars_pr)
 {

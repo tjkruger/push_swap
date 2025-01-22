@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   List.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/31 13:01:56 by tjkruger          #+#    #+#             */
-/*   Updated: 2025/01/21 14:37:45 by tjkruger         ###   ########.fr       */
+/*   Created: 2025/01/16 16:19:17 by tjkruger          #+#    #+#             */
+/*   Updated: 2025/01/21 14:02:28 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#ifndef LIST_H
+# define LIST_H
 
-int	ft_putnbr(int n, int *chars_pr)
+typedef struct s_dnode
 {
-	if (*chars_pr == -1)
-		return (-1);
-	if (n == -2147483648)
-	{
-		ft_putchar('-', chars_pr);
-		ft_putstr("2147483648", chars_pr);
-		return (11);
-	}
-	if (n < 0)
-	{
-		ft_putchar('-', chars_pr);
-		n = -n;
-	}
-	if (n >= 10)
-		ft_putnbr(n / 10, chars_pr);
-	return (ft_putchar((n % 10) + '0', chars_pr));
-}
+	int				value;
+	struct s_dnode	*prev;
+	struct s_dnode	*next;
+}					t_dnode;
+
+t_dnode				*create_node(int value);
+void				add_to_list_back(t_dnode **list, t_dnode *new_node);
+void				print_list(t_dnode *list);
+void				free_list(t_dnode **list);
+t_dnode				*parse_input(int argc, char **argv);
+
+#endif

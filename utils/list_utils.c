@@ -6,7 +6,7 @@
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 17:34:28 by tjkruger          #+#    #+#             */
-/*   Updated: 2025/01/21 15:06:53 by tjkruger         ###   ########.fr       */
+/*   Updated: 2025/01/23 18:02:20 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,19 +28,19 @@ t_dnode	*create_node(int value)
 	return (new_node);
 }
 
-void	add_to_list_back(t_dnode **list, t_dnode *new_node)
+void	add_to_list_back(t_dnode **list_a, t_dnode *new_node)
 {
 	t_dnode	*last;
 
-	if (!list || !new_node)
+	if (!list_a || !new_node)
 		return ;
-	if (!*list)
+	if (!*list_a)
 	{
-		*list = new_node;
+		*list_a = new_node;
 	}
 	else
 	{
-		last = *list;
+		last = *list_a;
 		while (last->next)
 			last = last->next;
 		last->next = new_node;
@@ -48,33 +48,42 @@ void	add_to_list_back(t_dnode **list, t_dnode *new_node)
 	}
 }
 
-void	print_list(t_dnode *list)
+void	print_list(t_dnode *list_a, t_dnode *list_b)
 {
-	if (!list)
+	ft_printf("Init a and b\n");
+	while (list_a || list_b)
 	{
-		ft_printf("List is empty\n");
-		return ;
+		if (list_a)
+		{
+			ft_printf("%d", list_a->value);
+			list_a = list_a->next;
+		}
+		else
+			ft_printf("_");
+		ft_printf(" ");
+		if (list_b)
+		{
+			ft_printf("%d", list_b->value);
+			list_b = list_b->next;
+		}
+		else
+			ft_printf(" ");
+		ft_printf("\n");
 	}
-	while (list)
-	{
-		ft_printf("%d", list->value);
-		if (list->next)
-			ft_printf(" -> ");
-		list = list->next;
-	}
-	ft_printf("\n");
+	ft_printf("- -\n");
+	ft_printf("a b\n");
 }
 
-void	free_list(t_dnode **list)
+void	free_list(t_dnode **list_a)
 {
 	t_dnode	*temp;
 
-	if (!list || !*list)
+	if (!list_a || !*list_a)
 		return ;
-	while (*list)
+	while (*list_a)
 	{
-		temp = *list;
-		*list = (*list)->next;
+		temp = *list_a;
+		*list_a = (*list_a)->next;
 		free(temp);
 	}
 }

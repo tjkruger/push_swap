@@ -6,7 +6,7 @@
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 16:34:32 by tjkruger          #+#    #+#             */
-/*   Updated: 2025/01/21 15:51:20 by tjkruger         ###   ########.fr       */
+/*   Updated: 2025/01/23 17:51:30 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,16 @@
 
 int	main(int argc, char **argv)
 {
-	t_dnode	*list;
-	t_dnode	*temp;
+	t_dnode	*list_a;
+	t_dnode	*list_b;
 
-	list = parse_input(argc, argv);
-	if (list == NULL)
+	list_a = parse_input(argc, argv);
+	list_b = NULL;
+	if (list_a == NULL)
 	{
 		return (1);
 	}
-	temp = list;
-	while (temp != NULL)
-	{
-		printf("%d\n", temp->value);
-		temp = temp->next;
-	}
-	free_list(&list);
+	print_list(list_a, list_b);
+	free_list(&list_a);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 16:19:17 by tjkruger          #+#    #+#             */
-/*   Updated: 2025/01/21 14:02:28 by tjkruger         ###   ########.fr       */
+/*   Updated: 2025/01/23 17:53:34 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ typedef struct s_dnode
 }					t_dnode;
 
 t_dnode				*create_node(int value);
-void				add_to_list_back(t_dnode **list, t_dnode *new_node);
-void				print_list(t_dnode *list);
-void				free_list(t_dnode **list);
+void				add_to_list_back(t_dnode **list_a, t_dnode *new_node);
+void				print_list(t_dnode *list_a, t_dnode *list_b);
+void				free_list(t_dnode **list_a);
 t_dnode				*parse_input(int argc, char **argv);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 17:43:21 by tjkruger          #+#    #+#             */
-/*   Updated: 2025/01/22 15:49:17 by tjkruger         ###   ########.fr       */
+/*   Updated: 2025/01/23 18:21:33 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int	ft_atoi(const char *s)
 	long	result;
 	int		sign;
 
-	i = 0;
 	i = 0;
 	sign = 1;
 	result = 0;

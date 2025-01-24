@@ -1,32 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   swap_instructions.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/11 16:34:32 by tjkruger          #+#    #+#             */
-/*   Updated: 2025/01/24 17:16:10 by tjkruger         ###   ########.fr       */
+/*   Created: 2025/01/24 17:00:57 by tjkruger          #+#    #+#             */
+/*   Updated: 2025/01/24 17:59:34 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 #include "../includes/list.h"
 #include "../includes/utils.h"
-#include <stdio.h>
 
-int	main(int argc, char **argv)
+void	sa(t_dnode **list_a)
 {
-	t_dnode	*list_a;
-	t_dnode	*list_b;
+	int	temp;
 
-	list_a = parse_input(argc, argv);
-	list_b = NULL;
-	if (list_a == NULL)
-	{
-		return (1);
-	}
-	print_list(list_a, list_b);
-	free_list(&list_a);
-	return (0);
+	if (!list_a || !(*list_a) || !(*list_a)->next)
+		return ;
+	temp = (*list_a)->value;
+	(*list_a)->value = (*list_a)->prev->value;
+	(*list_a)->prev->value = temp;
+}
+
+void	sb(t_dnode **list_b)
+{
+	int	temp;
+
+	if (!list_b || !(*list_b) || !(*list_b)->next)
+		return ;
+	temp = (*list_b)->value;
+	(*list_b)->value = (*list_b)->prev->value;
+	(*list_b)->prev->value = temp;
+}
+
+void	ss(t_dnode **list_a, t_dnode **list_b)
+{
+	sa(list_a);
+	sb(list_b);
 }

@@ -24,6 +24,9 @@ SRCS =	$(PRINTF_DIR)/ft_printf.c \
 		$(PRINTF_DIR)/ft_putunsigned.c \
 		$(UTILS_DIR)/list_utils.c \
 		$(UTILS_DIR)/input_utils.c \
+		$(UTILS_DIR)/push_instructions \
+		$(UTILS_DIR)/rotate_instructions \
+		$(UTILS_DIR)/swap_innstructions \
 		$(SRCS_DIR)/main.c \
 
 

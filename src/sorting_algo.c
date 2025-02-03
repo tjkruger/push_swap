@@ -6,7 +6,7 @@
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 15:37:36 by tjkruger          #+#    #+#             */
-/*   Updated: 2025/02/03 19:20:39 by tjkruger         ###   ########.fr       */
+/*   Updated: 2025/02/03 20:42:32 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,72 +15,28 @@
 #include "../includes/utils.h"
 #include <stdio.h>
 
-void	splitting_stack_to_a(t_dnode **list_a, t_dnode **list_b)
+void	put_bunch_over(t_dnode **list_a, t_dnode **list_b)
 {
-	t_dnode	*counter;
-	int		count;
-
-	count = 0;
-	counter = *list_b;
-	while (counter)
-	{
-		counter = counter->next;
-		count++;
-	}
-	count = count / 2;
-	while (count)
-	{
-		pa(list_a, list_b);
-		count--;
-	}
-}
-
-void	splitting_stack_to_b(t_dnode **list_a, t_dnode **list_b)
-{
-	t_dnode	*counter;
-	int		count;
-
-	count = 0;
-	counter = *list_a;
-	while (counter)
-	{
-		counter = counter->next;
-		count++;
-	}
-	count = count / 2;
-	while (count)
-	{
-		pb(list_a, list_b);
-		count--;
-	}
-}
-
-void	sort_a(t_dnode **list_a, t_dnode **list_b)
-{
-	t_dnode	*biggest_node;
+	t_dnode	*smallest_node;
 	t_dnode	*node;
+	int		i;
 
-	if (*list_a == NULL)
-		return ;
+	smallest_node = NULL;
 	node = *list_a;
-	biggest_node = node;
-	while (*list_a != NULL)
+	i = 0;
+	while (i <= 4 && *list_a)
 	{
-		node = *list_a;
-		biggest_node = node;
 		while (node)
 		{
-			if (node->value < biggest_node->value)
-				biggest_node = node;
+			if (node->value < smallest_node->value)
+				smallest_node = node;
 			node = node->next;
 		}
-		while ((*list_a)->value != biggest_node->value)
+		while (*list_a != smallest_node)
+		{
 			ra(list_a);
+		}
 		pb(list_a, list_b);
+		i++;
 	}
-	splitting_stack_to_a(list_a, list_b);
-}
-
-void	sort_b_into_a(t_dnode **list_a, t_dnode **list_b)
-{
 }

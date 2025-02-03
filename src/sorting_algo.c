@@ -1,11 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_intructions.c                                 :+:      :+:    :+:   */
+/*   sorting_algo.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/24 18:01:58 by tjkruger          #+#    #+#             */
-/*   Updated: 2025/01/24 19:34:00 by tjkruger         ###   ########.fr       */
+/*   Created: 2025/02/03 15:37:36 by tjkruger          #+#    #+#             */
+/*   Updated: 2025/02/03 15:37:48 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../includes/ft_printf.h"
+#include "../includes/list.h"
+#include "../includes/utils.h"
+#include <stdio.h>

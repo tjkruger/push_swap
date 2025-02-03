@@ -1,4 +1,4 @@
-CC = cc
+CC = cc -fsanitize=address
 CFLAGS = -Wall -Werror -Wextra
 INCLUDES = -I$(INCLUDES_DIR)
 
@@ -24,9 +24,9 @@ SRCS =	$(PRINTF_DIR)/ft_printf.c \
 		$(PRINTF_DIR)/ft_putunsigned.c \
 		$(UTILS_DIR)/list_utils.c \
 		$(UTILS_DIR)/input_utils.c \
-		$(UTILS_DIR)/push_instructions \
-		$(UTILS_DIR)/rotate_instructions \
-		$(UTILS_DIR)/swap_innstructions \
+		$(UTILS_DIR)/push_instructions.c \
+		$(UTILS_DIR)/rotate_instructions.c \
+		$(UTILS_DIR)/swap_instructions.c \
 		$(SRCS_DIR)/main.c \
 
 

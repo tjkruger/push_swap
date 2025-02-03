@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_intructions.c                               :+:      :+:    :+:   */
+/*   rotate_instructions.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 18:00:05 by tjkruger          #+#    #+#             */
-/*   Updated: 2025/01/24 19:43:11 by tjkruger         ###   ########.fr       */
+/*   Updated: 2025/02/03 15:08:02 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	ra(t_dnode **list_a)
 	t_dnode	*temp;
 	t_dnode	*last;
 
+	if (!list_a || !(*list_a) || !(*list_a)->next)
+		return ;
 	temp = *list_a;
 	*list_a = (*list_a)->next;
 	last = *list_a;
@@ -33,6 +35,8 @@ void	rb(t_dnode **list_b)
 	t_dnode	*temp;
 	t_dnode	*last;
 
+	if (!list_b || !(*list_b) || !(*list_b)->next)
+		return ;
 	temp = *list_b;
 	*list_b = (*list_b)->next;
 	last = *list_b;
@@ -53,11 +57,13 @@ void	rra(t_dnode **list_a)
 	t_dnode	*secondlast;
 	t_dnode	*last;
 
+	if (!list_a || !(*list_a) || !(*list_a)->next)
+		return ;
 	last = *list_a;
 	while (last->next)
 		last = last->next;
 	secondlast = last->prev;
-	secondlast->prev = NULL;
+	secondlast->next = NULL;
 	last->next = *list_a;
 	(*list_a)->prev = last;
 	last->prev = NULL;
@@ -69,11 +75,13 @@ void	rrb(t_dnode **list_b)
 	t_dnode	*secondlast;
 	t_dnode	*last;
 
+	if (!list_b || !(*list_b) || !(*list_b)->next)
+		return ;
 	last = *list_b;
 	while (last->next)
 		last = last->next;
 	secondlast = last->prev;
-	secondlast->prev = NULL;
+	secondlast->next = NULL;
 	last->next = *list_b;
 	(*list_b)->prev = last;
 	last->prev = NULL;

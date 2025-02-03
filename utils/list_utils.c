@@ -6,7 +6,7 @@
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 17:34:28 by tjkruger          #+#    #+#             */
-/*   Updated: 2025/01/24 17:17:27 by tjkruger         ###   ########.fr       */
+/*   Updated: 2025/02/03 15:19:04 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	print_list(t_dnode *list_a, t_dnode *list_b)
 			list_a = list_a->next;
 		}
 		else
-			ft_printf("_");
+			ft_printf(" ");
 		ft_printf(" ");
 		if (list_b)
 		{

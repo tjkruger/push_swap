@@ -6,7 +6,7 @@
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 16:34:32 by tjkruger          #+#    #+#             */
-/*   Updated: 2025/01/24 17:16:10 by tjkruger         ###   ########.fr       */
+/*   Updated: 2025/02/03 15:31:45 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,24 @@ int	main(int argc, char **argv)
 	{
 		return (1);
 	}
+	print_list(list_a, list_b);
+	// sa(&list_a);
+	pb(&list_a, &list_b);
+	pb(&list_a, &list_b);
+	pb(&list_a, &list_b);
+	pb(&list_a, &list_b);
+	ft_printf("\n all to b \n"); // muss noch raus is nur für lesbarkeit
+	print_list(list_a, list_b);
+	// pa(&list_a, &list_b);
+	// pa(&list_a, &list_b);
+	// ft_printf("\n half back to a \n");
+	// muss noch raus is nur für lesbarkeit
+	// print_list(list_a, list_b);
+	// ss(&list_a, &list_b);
+	ft_printf("\n"); // muss noch raus is nur für lesbarkeit
+	print_list(list_a, list_b);
+	sb(&list_b);
+	ft_printf("\n"); // muss noch raus is nur für lesbarkeit
 	print_list(list_a, list_b);
 	free_list(&list_a);
 	return (0);

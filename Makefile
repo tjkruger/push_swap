@@ -27,6 +27,7 @@ SRCS =	$(PRINTF_DIR)/ft_printf.c \
 		$(UTILS_DIR)/push_instructions.c \
 		$(UTILS_DIR)/rotate_instructions.c \
 		$(UTILS_DIR)/swap_instructions.c \
+		$(SRCS_DIR)/sorting_algo.c \
 		$(SRCS_DIR)/main.c \
 
 

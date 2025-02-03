@@ -6,7 +6,7 @@
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 17:34:28 by tjkruger          #+#    #+#             */
-/*   Updated: 2025/02/03 15:19:04 by tjkruger         ###   ########.fr       */
+/*   Updated: 2025/02/03 17:13:57 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ void	add_to_list_back(t_dnode **list_a, t_dnode *new_node)
 
 void	print_list(t_dnode *list_a, t_dnode *list_b)
 {
-	ft_printf("Init a and b\n");
 	while (list_a || list_b)
 	{
 		if (list_a)

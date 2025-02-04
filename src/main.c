@@ -6,7 +6,7 @@
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 16:34:32 by tjkruger          #+#    #+#             */
-/*   Updated: 2025/02/03 20:36:57 by tjkruger         ###   ########.fr       */
+/*   Updated: 2025/02/04 16:20:28 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ int	main(int argc, char **argv)
 	}
 	ft_printf("Init a and b\n");
 	print_list(list_a, list_b);
-	put_bunch_over(&list_a, &list_b);
-	ft_printf("\nput the first bunch over\n");
+	ft_printf("\noutput after fckn actual sorting\n");
 	print_list(list_a, list_b);
 	free_list(&list_a);
+	free_list(&list_b);
 	return (0);
 }

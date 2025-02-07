@@ -1,5 +1,5 @@
 CC = cc -fsanitize=address
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g
 INCLUDES = -I$(INCLUDES_DIR)
 
 NAME = push_swap

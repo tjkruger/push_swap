@@ -6,7 +6,7 @@
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 15:37:17 by tjkruger          #+#    #+#             */
-/*   Updated: 2025/02/04 15:37:47 by tjkruger         ###   ########.fr       */
+/*   Updated: 2025/02/07 17:59:35 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,38 +16,38 @@
 
 void	rra(t_dnode **list_a)
 {
-	t_dnode	*secondlast;
 	t_dnode	*last;
+	t_dnode	*secondlast;
 
 	if (!list_a || !(*list_a) || !(*list_a)->next)
 		return ;
 	last = *list_a;
+	secondlast = *list_a;
 	while (last->next)
 		last = last->next;
-	secondlast = last->prev;
-	secondlast->next = NULL;
+	while (secondlast->next->next)
+		secondlast = secondlast->next;
 	last->next = *list_a;
-	(*list_a)->prev = last;
-	last->prev = NULL;
 	*list_a = last;
+	secondlast->next = NULL;
 }
 
 void	rrb(t_dnode **list_b)
 {
-	t_dnode	*secondlast;
 	t_dnode	*last;
+	t_dnode	*secondlast;
 
 	if (!list_b || !(*list_b) || !(*list_b)->next)
 		return ;
 	last = *list_b;
+	secondlast = *list_b;
 	while (last->next)
 		last = last->next;
-	secondlast = last->prev;
-	secondlast->next = NULL;
+	while (secondlast->next->next)
+		secondlast = secondlast->next;
 	last->next = *list_b;
-	(*list_b)->prev = last;
-	last->prev = NULL;
 	*list_b = last;
+	secondlast->next = NULL;
 }
 
 void	rrr(t_dnode **list_a, t_dnode **list_b)

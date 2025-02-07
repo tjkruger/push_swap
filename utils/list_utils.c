@@ -6,7 +6,7 @@
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 17:34:28 by tjkruger          #+#    #+#             */
-/*   Updated: 2025/02/03 17:13:57 by tjkruger         ###   ########.fr       */
+/*   Updated: 2025/02/07 17:39:51 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ t_dnode	*create_node(int value)
 	if (!new_node)
 		return (NULL);
 	new_node->value = value;
-	new_node->prev = NULL;
 	new_node->next = NULL;
 	return (new_node);
 }
@@ -44,7 +43,6 @@ void	add_to_list_back(t_dnode **list_a, t_dnode *new_node)
 		while (last->next)
 			last = last->next;
 		last->next = new_node;
-		new_node->prev = last;
 	}
 }
 

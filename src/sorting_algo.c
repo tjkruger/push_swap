@@ -6,58 +6,34 @@
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 15:37:36 by tjkruger          #+#    #+#             */
-/*   Updated: 2025/02/04 16:33:48 by tjkruger         ###   ########.fr       */
+/*   Updated: 2025/02/07 19:21:35 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 #include "../includes/list.h"
+#include "../includes/utils.h"
 
-t_dnode	*find_largest(t_dnode *list_a)
+void	is_sorted(t_dnode **list_a, t_dnode **list_b)
 {
-	t_dnode	*largest_node;
-
-	largest_node = list_a;
-	while (list_a->next)
-	{
-		if (list_a->value > largest_node->value)
-			largest_node = list_a;
-		list_a = list_a->next;
-	}
-	return (largest_node);
-}
-
-t_dnode	*find_smallest(t_dnode *list_a)
-{
-}
-
-void	push_to_b(t_dnode **list_a, t_dnode **list_b)
-{
-	t_dnode	*smallest;
-	t_dnode	*largest;
 	t_dnode	*node;
+	int		counter;
+	int		state;
 
-	while (*list_a)
+	state = 0;
+	counter = 0;
+	node = *list_a;
+	while (node->next)
 	{
-		smallest = find_smallest(*list_a);
-		largest = find_largest(*list_a);
-		node = *list_a;
-		if (node == smallest || node == largest)
-		{
-			pb(list_a, list_b);
-			if (*list_b && (*list_b)->next)
-				rotate_list_b(list_b);
-		}
-		else
-		{
-			move_to_correct_position(list_b, node);
-			pb(list_a, list_b);
-		}
+		if (node->value > node->next->value)
+			state++;
+		counter++;
 	}
-}
-
-void	push_back_to_a(t_dnode **list_a, t_dnode **list_b)
-{
-	while (*list_b)
-		pa(list_a, list_b);
+	if (state == 0) // is in order so just print out list
+		print_list(list_a, list_b);
+	else if (counter > 3 && state > 0)
+		// big work needed bc more then 3 unsorted
+		get_sorted(list_a, list_b);
+	else if (counter <= 3 && state > 0) // small work bc less then 3 unsorted
+		get_sorted_for_three(list_a, list_b);
 }

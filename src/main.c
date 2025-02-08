@@ -6,7 +6,7 @@
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 16:34:32 by tjkruger          #+#    #+#             */
-/*   Updated: 2025/02/07 18:44:00 by tjkruger         ###   ########.fr       */
+/*   Updated: 2025/02/08 15:57:14 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	main(int argc, char **argv)
 	// rrb(&list_b);
 	// ft_printf("okay rra and rrb worked \n\n");
 	// print_list(list_a, list_b);
-	push_to_b(&list_a, &list_b);
+	sort_for_three(&list_a);
 	print_list(list_a, list_b);
 	free_list(&list_a);
 	free_list(&list_b);

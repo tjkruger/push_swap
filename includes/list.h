@@ -6,7 +6,7 @@
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 16:19:17 by tjkruger          #+#    #+#             */
-/*   Updated: 2025/02/07 17:36:05 by tjkruger         ###   ########.fr       */
+/*   Updated: 2025/02/24 14:10:22 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 typedef struct s_dnode
 {
 	int				value;
+	int				index;
 	struct s_dnode	*next;
 }					t_dnode;
 

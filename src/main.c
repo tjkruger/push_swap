@@ -6,7 +6,7 @@
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 16:34:32 by tjkruger          #+#    #+#             */
-/*   Updated: 2025/02/08 15:57:14 by tjkruger         ###   ########.fr       */
+/*   Updated: 2025/02/24 14:11:45 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ int	main(int argc, char **argv)
 	{
 		return (1);
 	}
-	ft_printf("Init a and b\n");
-	print_list(list_a, list_b);
+	// ft_printf("Init a and b\n");
+	// print_list(list_a, list_b);
 	// pb(&list_a, &list_b);
 	// pb(&list_a, &list_b);
 	// pb(&list_a, &list_b);
@@ -46,7 +46,7 @@ int	main(int argc, char **argv)
 	// ft_printf("okay rra and rrb worked \n\n");
 	// print_list(list_a, list_b);
 	sort_for_three(&list_a);
-	print_list(list_a, list_b);
+	// print_list(list_a, list_b);
 	free_list(&list_a);
 	free_list(&list_b);
 	return (0);

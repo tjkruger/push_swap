@@ -6,7 +6,7 @@
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 17:00:57 by tjkruger          #+#    #+#             */
-/*   Updated: 2025/02/08 15:56:58 by tjkruger         ###   ########.fr       */
+/*   Updated: 2025/03/03 13:39:42 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	sa(t_dnode **list_a)
 	first->next = second->next;
 	second->next = first;
 	*list_a = second;
+	update_indexes(*list_a);
 	ft_printf("sa\n");
 }
 
@@ -41,6 +42,7 @@ void	sb(t_dnode **list_b)
 	first->next = second->next;
 	second->next = first;
 	*list_b = second;
+	update_indexes(*list_b);
 	ft_printf("sb\n");
 }
 

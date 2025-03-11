@@ -1,30 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list.h                                             :+:      :+:    :+:   */
+/*   move_node_helperfunctions.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/16 16:19:17 by tjkruger          #+#    #+#             */
-/*   Updated: 2025/03/03 14:56:29 by tjkruger         ###   ########.fr       */
+/*   Created: 2025/03/11 11:11:07 by tjkruger          #+#    #+#             */
+/*   Updated: 2025/03/11 11:12:08 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIST_H
-# define LIST_H
 
-typedef struct s_dnode
+#include "../includes/ft_printf.h"
+#include "../includes/list.h"
+#include "../includes/utils.h"
+
+t_dnode	*get_node_at_index(t_dnode *node, int index)
 {
-	int				value;
-	int				index;
-	struct s_dnode	*next;
-}					t_dnode;
+	int	i;
 
-t_dnode				*create_node(int value);
-void				add_to_list_back(t_dnode **list_a, t_dnode *new_node);
-void				update_indexes(t_dnode *list);
-void				print_list(t_dnode *list_a, t_dnode *list_b);
-void				free_list(t_dnode **list_a);
-t_dnode				*parse_input(int argc, char **argv);
+	i = 0;
+	while (node && i < index)
+	{
+		node = node->next;
+		i++;
+	}
+	return (node);
+}
 
-#endif
+int	list_size(t_dnode *list)
+{
+	int	counter;
+
+	counter = 0;
+	while (list)
+	{
+		counter++;
+		list = list->next;
+	}
+	return (counter);
+}

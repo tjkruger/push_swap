@@ -6,7 +6,7 @@
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 14:15:17 by tjkruger          #+#    #+#             */
-/*   Updated: 2024/11/08 18:24:22 by tjkruger         ###   ########.fr       */
+/*   Updated: 2025/03/03 15:01:13 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
+# include <stdlib.h>
 # include <unistd.h>
 
 int	ft_printf(const char *format, ...);

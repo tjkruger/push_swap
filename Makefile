@@ -28,6 +28,9 @@ SRCS =	$(PRINTF_DIR)/ft_printf.c \
 		$(UTILS_DIR)/rotate_instructions.c \
 		$(UTILS_DIR)/rotate_reverse_instructions.c \
 		$(UTILS_DIR)/swap_instructions.c \
+		$(UTILS_DIR)/count_moves.c \
+		$(UTILS_DIR)/move_node_to_correct_pos.c \
+		$(UTILS_DIR)/move_node_helperfunctions.c \
 		$(SRCS_DIR)/sorting_algo.c \
 		$(SRCS_DIR)/main.c \
 
